@@ -1,0 +1,28 @@
+# 聊天记录
+data/chat_history.json
+
+# 上传的图片
+uploads/*.jpg
+uploads/*.jpeg
+uploads/*.png
+uploads/*.gif
+uploads/*.webp
+
+# 系统文件
+.DS_Store
+Thumbs.db
+
+# Go 相关
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.test
+*.out
+
+# IDE 相关
+.idea/
+.vscode/
+*.swp
+*.swo 

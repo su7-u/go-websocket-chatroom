@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebSocket 聊天室</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div id="login-container" class="container">
+        <h2>加入聊天室</h2>
+        <input type="text" id="username" placeholder="请输入用户名" required>
+        <button onclick="login()">进入聊天室</button>
+    </div>
+
+    <div id="chat-container" class="container" style="display: none;">
+        <div class="chat-main">
+            <div id="chat-header">
+                <h2>聊天室</h2>
+                <div class="header-right">
+                    <button id="minesweeper-btn" onclick="toggleMinesweeper()" class="game-btn">扫雷游戏</button>
+                    <span id="user-info"></span>
+                    <button onclick="logout()" class="logout-btn">退出</button>
+                </div>
+            </div>
+            <div id="chat-messages"></div>
+            <div id="chat-input">
+                <textarea id="message" placeholder="输入消息..." rows="2"></textarea>
+                <div class="input-actions">
+                    <label for="image-upload" class="image-upload-label">
+                        <svg viewBox="0 0 24 24" width="24" height="24">
+                            <path fill="currentColor" d="M21,19V5c0-1.1-0.9-2-2-2H5c-1.1,0-2,0.9-2,2v14c0,1.1,0.9,2,2,2h14C20.1,21,21,20.1,21,19z M8.5,13.5l2.5,3.01 L14.5,12l4.5,6H5l3.5-4.5z"/>
+                        </svg>
+                    </label>
+                    <input type="file" id="image-upload" accept="image/*" style="display: none;">
+                    <button onclick="sendMessage()">发送</button>
+                </div>
+            </div>
+        </div>
+        <div class="online-users">
+            <h3>在线用户 (<span id="online-count">0</span>)</h3>
+            <div id="users-list" class="users-list"></div>
+        </div>
+    </div>
+
+    <div id="minesweeper-container" class="minesweeper-container" style="display: none;">
+        <div class="minesweeper-header">
+            <span id="mine-count">💣 10</span>
+            <span id="timer">⏱️ 0</span>
+            <button onclick="toggleMinesweeper()" class="close-btn">×</button>
+        </div>
+        <div id="minesweeper-grid" class="minesweeper-grid"></div>
+    </div>
+
+    <script src="/js/main.js"></script>
+    <script src="/js/minesweeper.js"></script>
+</body>
+</html> 
